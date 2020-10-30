@@ -46,7 +46,8 @@ class FlowTest: XCTestCase {
     }
 
     func test_startAndAnswerFirstQuestion_withTwoQuestion_routeToSecondQuestion() {
-        makeSUT(questions: ["Q1","Q2"]).start()
+        let sut = makeSUT(questions: ["Q1","Q2"])
+        sut.start()
 
         router.answerCallback("A1")
 
