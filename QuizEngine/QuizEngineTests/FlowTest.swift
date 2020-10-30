@@ -10,9 +10,9 @@ import XCTest
 @testable import QuizEngine
 
 class FlowTest: XCTestCase {
+    let router = RouterSpy()
 
     func test_start_withNoQuestions_doesNotRouteToQuestion() {
-        let router = RouterSpy()
         let sut = Flow(questions: [], router: router)
         sut.start()
 
@@ -20,7 +20,6 @@ class FlowTest: XCTestCase {
     }
 
     func test_start_withOneQuestion_routeToCorrectQuestion() {
-        let router = RouterSpy()
         let sut = Flow(questions: ["Q1"],router: router)
         sut.start()
 
@@ -28,7 +27,6 @@ class FlowTest: XCTestCase {
     }
 
     func test_start_withOneQuestion_routeToCorrectQuestion_Q2() {
-        let router = RouterSpy()
         let sut = Flow(questions: ["Q2"],router: router)
         sut.start()
 
@@ -36,16 +34,13 @@ class FlowTest: XCTestCase {
     }
 
     func test_start_withTwoQuestion_routeToFirstQuestion() {
-        let router = RouterSpy()
         let sut = Flow(questions: ["Q1","Q2"],router: router)
         sut.start()
 
         XCTAssertEqual(router.routedQuestions, ["Q1"])
-
     }
 
     func test_startTwice_withTwoQuestion_routeToFirstQuestionTwice() {
-        let router = RouterSpy()
         let sut = Flow(questions: ["Q1","Q2"],router: router)
         sut.start()
         sut.start()
@@ -54,7 +49,6 @@ class FlowTest: XCTestCase {
     }
 
     func test_startAndAnswerFirstQuestion_withTwoQuestion_routeToSecondQuestion() {
-        let router = RouterSpy()
         let sut = Flow(questions: ["Q1","Q2"],router: router)
         sut.start()
 
