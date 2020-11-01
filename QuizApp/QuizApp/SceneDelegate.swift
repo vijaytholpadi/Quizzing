@@ -22,7 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
 
-        let viewController = QuestionViewController()
+        let viewController = QuestionViewController(question: "Q1", options: ["A1","A2"]) { selections in
+            print(selections)
+        }
+        _ = viewController.view
+        viewController.tableView.allowsMultipleSelection = false
         window.rootViewController = viewController
         window.makeKeyAndVisible()
     }

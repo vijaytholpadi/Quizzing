@@ -53,7 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let window = UIWindow(frame: UIScreen.main.bounds)
             self.window = window
 
-            let viewController = QuestionViewController()
+            let viewController = QuestionViewController(question: "Q1", options: ["A1","A2"]) { (_) in
+                
+            }
             window.rootViewController = viewController
         }
 
