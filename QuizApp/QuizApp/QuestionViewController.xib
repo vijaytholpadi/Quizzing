@@ -21,15 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoV-h9-tbI">
-                    <rect key="frame" x="186" y="176" width="21" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoV-h9-tbI">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3l1-LX-QWY"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="38i-hp-HJ2">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="z0V-My-9Vr"/>
@@ -40,8 +42,11 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VoV-h9-tbI" secondAttribute="trailing" id="1D1-YA-Rn6"/>
+                <constraint firstItem="VoV-h9-tbI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="AMu-Cp-hc8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="38i-hp-HJ2" secondAttribute="trailing" id="KlK-b0-qRt"/>
-                <constraint firstItem="38i-hp-HJ2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rHq-jo-U9u"/>
+                <constraint firstItem="VoV-h9-tbI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="X9g-FC-dGK"/>
+                <constraint firstItem="38i-hp-HJ2" firstAttribute="top" secondItem="VoV-h9-tbI" secondAttribute="bottom" id="rjc-tg-aRD"/>
                 <constraint firstItem="38i-hp-HJ2" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="34" id="sB9-vR-6uE"/>
                 <constraint firstItem="38i-hp-HJ2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xtk-N8-zp2"/>
             </constraints>
